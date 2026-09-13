@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27172596265759180');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=27172596265759180&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bryan Capital</title>
+<meta name="description" content="Aqui você aprende a operar de verdade. Método, resultado e liberdade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0a0f1c;
+    --navy-800:#111a2e;
+    --navy-700:#1a2540;
+    --gold-500:#c9a04a;
+    --gold-400:#e0bd6f;
+    --ink:#f4f1e9;
+    --ink-dim:#96a1b8;
+    --hairline:rgba(201,160,74,0.35);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{background:var(--navy-900);}
+
+  body{
+    min-height:100svh;
+    background:var(--navy-900);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:0 0 64px;
+    overflow-x:hidden;
+  }
+
+  .chart-line{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    opacity:0.14;
+    pointer-events:none;
+  }
+
+  .page{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:420px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .banner{
+    position:relative;
+    width:100%;
+    height:220px;
+    overflow:hidden;
+  }
+
+  .banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 30%;
+  }
+
+  .banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(10,15,28,0.15) 0%, rgba(10,15,28,0.55) 65%, var(--navy-900) 100%);
+  }
+
+  .avatar-wrap{
+    margin-top:-56px;
+    width:112px;
+    height:112px;
+    border-radius:50%;
+    padding:3px;
+    background:conic-gradient(from 180deg, var(--gold-500), var(--navy-700) 40%, var(--gold-400) 75%, var(--gold-500));
+    position:relative;
+    z-index:2;
+  }
+
+  .avatar{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    overflow:hidden;
+    background:var(--navy-800);
+    border:3px solid var(--navy-900);
+  }
+
+  .avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 15%;
+  }
+
+  .content{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0 20px;
+  }
+
+  h1{
+    margin-top:24px;
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:29px;
+    letter-spacing:0.2px;
+    text-align:center;
+  }
+
+  .tagline{
+    margin-top:12px;
+    text-align:center;
+    color:var(--ink-dim);
+    font-size:15px;
+    line-height:1.55;
+    max-width:300px;
+  }
+
+  .tagline strong{
+    display:block;
+    color:var(--ink);
+    font-weight:500;
+    margin-bottom:2px;
+  }
+
+  .divider{
+    margin:28px 0 26px;
+    width:56px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  }
+
+  .links{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .link-btn{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    width:100%;
+    padding:16px 18px;
+    border-radius:12px;
+    border:1px solid var(--hairline);
+    background:rgba(255,255,255,0.02);
+    color:var(--ink);
+    text-decoration:none;
+    transition:background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .link-btn:hover{
+    background:rgba(201,160,74,0.08);
+    border-color:var(--gold-400);
+    transform:translateY(-1px);
+  }
+
+  .link-btn:active{
+    transform:translateY(0);
+  }
+
+  .link-btn.primary{
+    background:linear-gradient(180deg, var(--gold-400), var(--gold-500));
+    border-color:transparent;
+    color:var(--navy-900);
+  }
+
+  .link-btn.primary:hover{
+    filter:brightness(1.06);
+    background:linear-gradient(180deg, var(--gold-400), var(--gold-500));
+  }
+
+  .link-btn.primary .link-sub{
+    color:rgba(10,15,28,0.65);
+  }
+
+  .icon{
+    flex:0 0 auto;
+    width:22px;
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .icon svg{width:100%; height:100%;}
+
+  .link-text{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    min-width:0;
+  }
+
+  .link-title{
+    font-weight:600;
+    font-size:15px;
+  }
+
+  .link-sub{
+    font-size:12.5px;
+    color:var(--ink-dim);
+  }
+
+  footer{
+    margin-top:40px;
+    font-size:12px;
+    color:rgba(150,161,184,0.6);
+    letter-spacing:0.3px;
+    text-align:center;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<svg class="chart-line" viewBox="0 0 400 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <polyline points="0,620 30,600 55,640 80,560 110,590 140,500 165,530 195,460 220,480 250,410 280,440 305,380 335,400 360,340 400,360"
+    fill="none" stroke="#c9a04a" stroke-width="2"/>
+  <polyline points="0,760 25,745 50,770 75,730 105,750 130,700 160,715 190,670 215,690 245,650 270,665 300,620 330,635 360,600 400,615"
+    fill="none" stroke="#c9a04a" stroke-width="1.4" opacity="0.6"/>
+</svg>
+
+<div class="page">
+  <div class="banner">
+    <img src="cover.jpg" alt="">
+  </div>
+
+  <div class="content">
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <img src="profile.jpg" alt="Bryan Capital">
+      </div>
+    </div>
+
+    <h1>Bryan Capital</h1>
+
+    <p class="tagline">
+      <strong>Aqui você aprende a operar de verdade.</strong>
+      Método, resultado e liberdade.
+    </p>
+
+    <div class="divider"></div>
+
+    <nav class="links">
+      <a class="link-btn primary" href="https://stockity-r3.com/?a=edcc46fef952&t=0#auth" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 17L9 11L13 15L21 7" stroke="#0a0f1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7H21V13" stroke="#0a0f1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">Criar conta na corretora</span>
+          <span class="link-sub">Cadastro oficial · Stockity</span>
+        </span>
+      </a>
+
+      <a class="link-btn" href="https://youtu.be/Sa1y8tQHO-4?si=0LF2zT5q6l1Zk-gK" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="#e0bd6f" stroke-width="1.6"/><path d="M10 9L15 12L10 15V9Z" fill="#e0bd6f"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">Assistir aula completa grátis</span>
+          <span class="link-sub">Estratégia explicada do zero</span>
+        </span>
+      </a>
+
+      <a class="link-btn" href="https://t.me/gabrielpatricbot?start=6a2c5813acdf1c33ee0b7d5b" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 4L3 11.5L10 14M21 4L14.5 20L10 14M21 4L10 14" stroke="#e0bd6f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-title">Falar com o suporte</span>
+          <span class="link-sub">Ative seu acesso ao grupo VIP</span>
+        </span>
+      </a>
+    </nav>
+
+    <footer>© Bryan Capital</footer>
+  </div>
+</div>
+
+</body>
+</html>
